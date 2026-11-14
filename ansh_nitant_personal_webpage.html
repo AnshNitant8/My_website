@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Portfolio of Ansh Nitant — Product Manager focused on API products, insurtech and digital experiences.">
+<title>Ansh Nitant | Product Manager</title>
+<style>
+:root{
+  --ink:#172b3a; --muted:#60717d; --navy:#102b3d; --teal:#287b78;
+  --teal-light:#e7f1ef; --paper:#f6f8f7; --white:#fff; --line:#dce5e3;
+  --gold:#bd9658; --shadow:0 18px 55px rgba(16,43,61,.08);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Inter,"Segoe UI",Arial,sans-serif;line-height:1.65}
+a{color:inherit;text-decoration:none}
+a:hover{color:var(--teal)}
+.wrap{width:min(1120px,calc(100% - 44px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(246,248,247,.92);backdrop-filter:blur(14px);border-bottom:1px solid rgba(220,229,227,.8)}
+.nav{height:70px;display:flex;align-items:center;justify-content:space-between}
+.brand{font-family:Georgia,serif;font-size:21px;letter-spacing:.03em;font-weight:700;color:var(--navy)}
+.brand span{color:var(--teal)}
+nav{display:flex;gap:25px;font-size:12px;letter-spacing:.11em;text-transform:uppercase;color:var(--muted)}
+nav a{padding:8px 0}
+.hero{background:var(--navy);color:white;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:560px;height:560px;border:1px solid rgba(255,255,255,.1);border-radius:50%;right:-100px;top:-260px}
+.hero:after{content:"";position:absolute;width:390px;height:390px;border:1px solid rgba(189,150,88,.28);border-radius:50%;right:15px;top:-170px}
+.hero-inner{position:relative;z-index:1;padding:94px 0 88px;display:grid;grid-template-columns:1.45fr .55fr;gap:60px;align-items:center}
+.eyebrow{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:#9bc7c0;font-weight:700}
+h1{font:500 clamp(44px,6vw,72px)/1.05 Georgia,serif;letter-spacing:-.035em;margin:18px 0 20px}
+.hero p{max-width:690px;color:#d2dde2;font-size:17px;line-height:1.8;margin:0}
+.hero-meta{margin-top:30px;display:flex;flex-wrap:wrap;gap:12px 22px;color:#c1d0d5;font-size:13px}
+.hero-meta span{display:flex;align-items:center;gap:8px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--gold);display:inline-block}
+.hero-side{border-left:1px solid rgba(255,255,255,.2);padding:12px 0 12px 30px}
+.hero-side .role{font:italic 23px/1.35 Georgia,serif;color:#fff}
+.hero-side .small{margin-top:20px;color:#aebfc6;font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+.btns{display:flex;gap:12px;margin-top:34px;flex-wrap:wrap}
+.btn{display:inline-block;padding:12px 19px;border:1px solid rgba(255,255,255,.4);font-size:12px;letter-spacing:.08em;text-transform:uppercase;transition:.2s}
+.btn.primary{background:#d8e8e4;color:var(--navy);border-color:#d8e8e4}
+.btn:hover{background:white;color:var(--navy)}
+section{padding:78px 0}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:34px}
+.kicker{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:700}
+h2{font:500 clamp(30px,4vw,42px)/1.15 Georgia,serif;color:var(--navy);margin:8px 0 0;letter-spacing:-.02em}
+.section-note{max-width:380px;color:var(--muted);font-size:13px}
+.about-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:55px}
+.about-copy{font:19px/1.8 Georgia,serif;color:#314653}
+.about-copy p{margin:0 0 17px}
+.about-copy strong{color:var(--teal);font-weight:600}
+.focus-panel{background:white;border:1px solid var(--line);padding:28px;box-shadow:var(--shadow)}
+.focus-panel h3{font:20px Georgia,serif;margin:0 0 18px;color:var(--navy)}
+.tag-list{display:flex;flex-wrap:wrap;gap:9px}
+.tag{padding:7px 11px;background:var(--teal-light);color:#285f5d;font-size:11px;letter-spacing:.03em}
+.metrics{background:#edf3f1;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:36px 0}
+.metric-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.metric{padding:9px 18px;border-left:2px solid var(--gold)}
+.metric strong{display:block;font:36px Georgia,serif;color:var(--navy);line-height:1.1}
+.metric span{display:block;color:var(--muted);font-size:12px;margin-top:8px}
+.experience{background:white}
+.timeline{display:grid;gap:0}
+.job{display:grid;grid-template-columns:225px 1fr;gap:35px;padding:28px 0;border-top:1px solid var(--line)}
+.job:first-child{border-top:0}
+.job-date{font-size:12px;color:var(--muted);line-height:1.8}
+.job-date strong{display:block;color:var(--teal);font-size:11px;letter-spacing:.12em;text-transform:uppercase}
+.job-main h3{font:23px Georgia,serif;color:var(--navy);margin:0}
+.job-main .position{font-size:13px;color:var(--muted);margin:4px 0 13px}
+.job-main ul{padding-left:18px;margin:0;color:#465b66;font-size:14px}
+.job-main li{padding:3px 0 3px 4px}
+.job-main li::marker{color:var(--gold)}
+.education-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.edu{background:white;border:1px solid var(--line);padding:23px 24px}
+.edu h3{font:19px Georgia,serif;color:var(--navy);margin:0 0 6px}
+.edu p{font-size:13px;color:var(--muted);margin:0}
+.edu .year{font-size:11px;color:var(--teal);letter-spacing:.1em;text-transform:uppercase;margin-top:12px}
+.credentials{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:30px}
+.credential{padding:20px 22px;border:1px solid var(--line);background:#f0f5f3}
+.credential span{display:block;font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--teal);font-weight:700}
+.credential strong{display:block;font:18px Georgia,serif;margin-top:7px;color:var(--navy)}
+.contact{background:var(--navy);color:white;padding:70px 0}
+.contact h2{color:white}
+.contact p{color:#c6d3d8;max-width:580px}
+.contact-row{display:flex;justify-content:space-between;align-items:center;gap:30px;margin-top:28px;padding-top:25px;border-top:1px solid rgba(255,255,255,.2)}
+.contact-links{display:flex;gap:22px;flex-wrap:wrap;font-size:13px;color:#e2ecee}
+.contact-links a{border-bottom:1px solid rgba(255,255,255,.35);padding-bottom:3px}
+footer{background:#0b2231;color:#91a5ae;padding:18px 0;font-size:11px;letter-spacing:.05em}
+footer .wrap{display:flex;justify-content:space-between;gap:20px}
+@media(max-width:760px){
+ nav{gap:12px;font-size:10px}.hero-inner{grid-template-columns:1fr;gap:34px;padding:68px 0}
+ .hero-side{border-left:0;border-top:1px solid rgba(255,255,255,.2);padding:22px 0 0}
+ .about-grid{grid-template-columns:1fr;gap:25px}.metric-grid{grid-template-columns:1fr 1fr}
+ .job{grid-template-columns:1fr;gap:8px}.education-grid,.credentials{grid-template-columns:1fr}
+ .section-head{display:block}.section-note{margin-top:12px}.contact-row{display:block}
+}
+@media(max-width:430px){.wrap{width:min(100% - 30px,1120px)}nav{gap:9px}.nav{height:60px}.metric strong{font-size:30px}}
+@media print{
+ header{position:static}.hero{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ .btn{display:none}section{padding:35px 0}.contact{print-color-adjust:exact;-webkit-print-color-adjust:exact}
+ body{background:white}
+}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#home">AN<span>.</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#about">Profile</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="wrap hero-inner">
+    <div>
+      <div class="eyebrow">Product Manager · Insurtech · API Products</div>
+      <h1>Ansh Nitant</h1>
+      <p>Building digital products that make complex systems simpler — connecting business priorities, customer needs and technology execution.</p>
+      <div class="hero-meta">
+        <span><i class="dot"></i> Immediate joiner</span>
+        <span><i class="dot"></i> West Bengal, India</span>
+        <span><i class="dot"></i> CSPO</span>
+      </div>
+      <div class="btns">
+        <a class="btn primary" href="mailto:ansh.nitant@gmail.com">Get in touch</a>
+        <a class="btn" href="https://www.linkedin.com/in/ansh-nitant-ba5407b1" target="_blank" rel="noopener">LinkedIn profile</a>
+      </div>
+    </div>
+    <aside class="hero-side">
+      <div class="role">“Product thinking grounded in technical understanding and real-world context.”</div>
+      <div class="small">Open to product roles<br>Fintech · Insurtech · SaaS · Consumer Tech</div>
+    </aside>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">01 / Profile</div><h2>Business context.<br>Technical fluency.</h2></div>
+      <div class="section-note">A cross-functional product professional with experience across insurance, consulting, technology and rural development.</div>
+    </div>
+    <div class="about-grid">
+      <div class="about-copy">
+        <p>My product journey spans <strong>API-led insurance distribution, workflow automation and data-driven digital tools</strong>. At Care Health Insurance, I led initiatives supporting ₹60 crore in annual business volume, integrated 100+ partners and helped reduce partner onboarding time by 75%.</p>
+        <p>Earlier experience in software development at Accenture built my understanding of technology systems. An MBA in Rural Management from IRMA and field exposure in Jharkhand added a ground-level perspective on people, institutions and service delivery.</p>
+        <p>I work across the product lifecycle — from translating business requirements into BRDs and user stories to collaborating with engineering, design, QA and business teams through Agile delivery.</p>
+      </div>
+      <div class="focus-panel">
+        <h3>Areas of focus</h3>
+        <div class="tag-list">
+          <span class="tag">Product Strategy</span><span class="tag">API Products</span><span class="tag">Insurtech</span>
+          <span class="tag">Agile / Scrum</span><span class="tag">BRD / PRD</span><span class="tag">Jira</span>
+          <span class="tag">Figma & Wireframing</span><span class="tag">Stakeholder Management</span>
+          <span class="tag">GTM</span><span class="tag">Funnel Optimisation</span><span class="tag">A/B Testing</span>
+          <span class="tag">Rapid Prototyping</span><span class="tag">AI for Product</span><span class="tag">RAG</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="metrics">
+  <div class="wrap metric-grid">
+    <div class="metric"><strong>₹60Cr</strong><span>Annual business volume supported</span></div>
+    <div class="metric"><strong>100+</strong><span>Partners and aggregators integrated</span></div>
+    <div class="metric"><strong>75%</strong><span>Reduction in partner onboarding time</span></div>
+    <div class="metric"><strong>95%</strong><span>Reduction in manual data processing</span></div>
+  </div>
+</div>
+
+<section class="experience" id="experience">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">02 / Career</div><h2>Experience</h2></div>
+      <div class="section-note">Selected roles and outcomes across product management, consulting and technology.</div>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="job-date"><strong>Dec 2025 — May 2026</strong>West Bengal, India</div>
+        <div class="job-main">
+          <h3>I-PAC</h3><div class="position">Strategy Consultant — Lead Associate</div>
+          <ul>
+            <li>Defined requirements and drove adoption of real-time performance dashboards across 23 districts, acting as product owner for internal digital tools; improved data accuracy by 40%.</li>
+            <li>Designed a data-driven stakeholder engagement strategy for a 30M+ user network, achieving 40% activation across 1,800+ MP/MLA networks.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-date"><strong>Jun 2024 — Nov 2025</strong>Gurugram, Haryana, India</div>
+        <div class="job-main">
+          <h3>Care Health Insurance</h3><div class="position">Product Manager — IT</div>
+          <ul>
+            <li>Led product initiatives supporting ₹50 lakh/month in retail and ₹60 crore/year in business volumes across Group Corporate Business.</li>
+            <li>Directed portal development to achieve 100% automation in post-policy issuance, eliminating manual processing.</li>
+            <li>Reduced partner onboarding time by 75% through API versioning; developed a Quotation API for integrations with 100+ partners and aggregators.</li>
+            <li>Designed a Company Profile Retrieval System that reduced manual data processing by 95%; GST-based authentication reduced junk leads by 40%.</li>
+            <li>Managed Agile product backlog, BRDs, wireframes and user stories in Jira with Engineering, QA, Design, Business and Sales teams.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-date"><strong>May 2023 — Jul 2023</strong>Ahmedabad, Gujarat, India</div>
+        <div class="job-main">
+          <h3>Medkart Pharmacy</h3><div class="position">Summer Intern</div>
+          <ul>
+            <li>Recommended category-specific shelf talkers and potential OTC category additions based on store visits and customer research.</li>
+            <li>Developed a mystery-shopping checklist to identify cost-saving opportunities and improve in-store customer experience.</li>
+            <li>Analysed OTC purchase behaviour through customer surveys, interviews and competitor store observations.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-date"><strong>Oct 2022 — Dec 2022</strong>Padma, Jharkhand, India</div>
+        <div class="job-main">
+          <h3>Grant Thornton Bharat LLP</h3><div class="position">Village Fieldwork Segment (VFS)</div>
+          <ul>
+            <li>Contributed to sustainable agriculture and livelihood interventions, supporting the goal of raising farmers’ income by 40%.</li>
+            <li>Conducted a baseline survey of 100+ farmers to understand income and livelihood patterns.</li>
+            <li>Designed a cluster-level plan to enhance farmer income and assessed the feasibility of integrating Aspirational District Programme parameters into a newly established Farmer Producer Company.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-date"><strong>Jan 2017 — Dec 2017</strong>Bengaluru, India</div>
+        <div class="job-main">
+          <h3>Accenture</h3><div class="position">Associate Software Engineer</div>
+          <ul>
+            <li>Developed and maintained a MySQL database for 1,000+ employees at Accenture and Société Générale.</li>
+            <li>Managed APTP’s Galaxy, a legacy Java application using Bloomberg and Reuters data to predict forward prices.</li>
+          </ul>
+        </div>
+      </article>
+      <article class="job">
+        <div class="job-date"><strong>May 2015 — Jun 2015</strong>Bokaro, Jharkhand, India</div>
+        <div class="job-main">
+          <h3>Steel Authority of India Ltd.</h3><div class="position">Observational Trainee</div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="education">
+  <div class="wrap">
+    <div class="section-head">
+      <div><div class="kicker">03 / Learning</div><h2>Education & credentials</h2></div>
+    </div>
+    <div class="education-grid">
+      <div class="edu"><h3>Institute of Rural Management Anand (IRMA)</h3><p>PGDM, Rural Management</p><div class="year">2022 — 2024</div></div>
+      <div class="edu"><h3>PES University</h3><p>Bachelor of Engineering, Computer Science</p><div class="year">2012 — 2016</div></div>
+      <div class="edu"><h3>UPSC Civil Services</h3><p>Self-educated · General Studies</p><div class="year">2018 — 2022</div></div>
+      <div class="edu"><h3>Center for Public Policy Research</h3><p>Certificate, International Relations and Affairs</p><div class="year">Jul — Aug 2023</div></div>
+    </div>
+    <div class="credentials">
+      <div class="credential"><span>Certification</span><strong>Certified Scrum Product Owner (CSPO)</strong></div>
+      <div class="credential"><span>Additional learning</span><strong>AI for Product Management</strong></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div class="kicker">04 / Contact</div>
+    <h2>Let’s build something<br>meaningful.</h2>
+    <p>Open to Product Manager opportunities across Fintech, Insurtech, SaaS and Consumer Tech. If you’re working on a product that needs structured thinking, strong execution and cross-functional collaboration, I’d be glad to connect.</p>
+    <div class="contact-row">
+      <div class="contact-links">
+        <a href="mailto:ansh.nitant@gmail.com">ansh.nitant@gmail.com</a>
+        <a href="https://www.linkedin.com/in/ansh-nitant-ba5407b1" target="_blank" rel="noopener">LinkedIn ↗</a>
+      </div>
+      <a class="btn primary" href="mailto:ansh.nitant@gmail.com">Start a conversation</a>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap"><span>© 2026 Ansh Nitant</span><span>Product Management · Insurtech · Digital Products</span></div></footer>
+</body>
+</html>
